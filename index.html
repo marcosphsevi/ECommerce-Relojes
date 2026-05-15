@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KRNL — Relojes</title>
+  <link rel="stylesheet" href="style.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+
+  <!-- Checkbox que controla el carrito -->
+  <input type="checkbox" id="cartToggle" class="cart-toggle-input" />
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header__logo">
+      <img class="logo-dark" src="resources/ruloxlogoblack.png" alt="RULOX" />
+      <img class="logo-light" src="resources/ruloxlogowhite.png" alt="RULOX" />
+    </div>
+    <nav class="header__nav">
+      <a href="#">Colección</a>
+      <a href="#">Sobre nosotros</a>
+      <a href="#">Contacto</a>
+    </nav>
+    <div class="header__actions">
+      <button
+        class="theme-toggle"
+        title="Cambiar tema"
+        onclick="document.documentElement.classList.toggle('dark'); this.textContent = document.documentElement.classList.contains('dark') ? '☀️' : '🌙';"
+      >🌙</button>
+      <span class="user-status">Iniciar sesión</span>
+      <!-- Label vinculada al checkbox — actúa como botón -->
+      <label for="cartToggle" class="cart-btn">
+        CARRITO <span class="cart-count" id="cartCount">0</span>
+      </label>
+    </div>
+  </header>
+
+  <!-- TICKER -->
+  <div class="ticker">
+    <div class="ticker__inner">
+      <span>ENVÍO GRATUITO EN PEDIDOS SUPERIORES A 500€</span>
+      <span>•</span>
+      <span>NUEVOS MODELOS DISPONIBLES</span>
+      <span>•</span>
+      <span>GARANTÍA 3 AÑOS</span>
+      <span>•</span>
+      <span>ENVÍO GRATUITO EN PEDIDOS SUPERIORES A 500€</span>
+      <span>•</span>
+      <span>NUEVOS MODELOS DISPONIBLES</span>
+      <span>•</span>
+      <span>GARANTÍA 3 AÑOS</span>
+      <span>•</span>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__text">
+      <p class="hero__sub">Colección 2025</p>
+      <h1 class="hero__title">EL TIEMPO<br />ES TUYO.</h1>
+      <p class="hero__desc">Relojes de autor. Precisión suiza.<br />Diseño sin concesiones.</p>
+      <a href="#catalogo" class="btn-primary">Ver colección</a>
+    </div>
+    <div class="hero__visual">
+      <div class="hero__circle">
+        <img class="logo-light" src="resources/ruloxlogo.png" alt="Reloj destacado"/>
+        <img class="logo-dark"  src="resources/ruloxlogodark.png" alt="Reloj destacado"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTROLES -->
+  <section class="controls" id="catalogo">
+    <div class="controls__filters">
+      <button class="filter-btn active" data-cat="todos">Todos</button>
+      <button class="filter-btn" data-cat="sport">Sport</button>
+      <button class="filter-btn" data-cat="clasico">Clásico</button>
+      <button class="filter-btn" data-cat="digital">Digital</button>
+      <button class="filter-btn" data-cat="luxury">Luxury</button>
+    </div>
+    <div class="controls__sort">
+      <label>Ordenar:</label>
+      <select>
+        <option value="default">Destacados</option>
+        <option value="asc">Precio: menor a mayor</option>
+        <option value="desc">Precio: mayor a menor</option>
+      </select>
+    </div>
+  </section>
+
+  <!-- GRID DE PRODUCTOS -->
+  <main class="catalog">
+
+    <article class="product-card" data-categoria="clasico" data-precio="340">
+      <div class="product-card__img-wrap">
+        <span class="product-card__cat product-card__cat--clasico">Clásico</span>
+        <img class="product-card__img" src="resources/cdwatch.png" alt="CD WATCH" />
+      </div>
+      <div class="product-card__body">
+        <span class="product-card__ref">KRN-001</span>
+        <h2 class="product-card__name">CD WATCH</h2>
+        <p class="product-card__desc">Caja de acero, estilo minimalista con dial holográfico.</p>
+      </div>
+      <div class="product-card__footer">
+        <span class="product-card__price">340 €</span>
+        <button class="add-to-cart" data-id="KRN-001" data-nombre="CD WATCH" data-precio="340">+ Añadir</button>
+      </div>
+    </article>
+
+    <article class="product-card" data-categoria="sport" data-precio="220">
+      <div class="product-card__img-wrap">
+        <span class="product-card__cat product-card__cat--sport">Sport</span>
+        <img class="product-card__img" src="resources/royaloak.png" alt="ROYAL OAK" />
+      </div>
+      <div class="product-card__body">
+        <span class="product-card__ref">KRN-002</span>
+        <h2 class="product-card__name">ROYAL OAK</h2>
+        <p class="product-card__desc">Resistencia 200m, bisel giratorio unidireccional, correa de caucho.</p>
+      </div>
+      <div class="product-card__footer">
+        <span class="product-card__price">220 €</span>
+        <button class="add-to-cart" data-id="KRN-002" data-nombre="ROYAL OAK" data-precio="220">+ Añadir</button>
+      </div>
+    </article>
+
+    <article class="product-card" data-categoria="digital" data-precio="175">
+      <div class="product-card__img-wrap">
+        <span class="product-card__cat product-card__cat--digital">Digital</span>
+        <img class="product-card__img" src="resources/apple.png" alt="APPLE WATCH" />
+      </div>
+      <div class="product-card__body">
+        <span class="product-card__ref">KRN-003</span>
+        <h2 class="product-card__name">APPLE WATCH</h2>
+        <p class="product-card__desc">Display LED difuso, carga inalámbrica, batería 72h.</p>
+      </div>
+      <div class="product-card__footer">
+        <span class="product-card__price">175 €</span>
+        <button class="add-to-cart" data-id="KRN-003" data-nombre="APPLE WATCH" data-precio="175">+ Añadir</button>
+      </div>
+    </article>
+
+    <article class="product-card" data-categoria="luxury" data-precio="1250">
+      <div class="product-card__img-wrap">
+        <span class="product-card__cat product-card__cat--luxury">Luxury</span>
+        <img class="product-card__img" src="resources/tissot.png" alt="TISSOT" />
+      </div>
+      <div class="product-card__body">
+        <span class="product-card__ref">KRN-004</span>
+        <h2 class="product-card__name">TISSOT</h2>
+        <p class="product-card__desc">Movimiento automático, brazalete incorporado.</p>
+      </div>
+      <div class="product-card__footer">
+        <span class="product-card__price">1.250 €</span>
+        <button class="add-to-cart" data-id="KRN-004" data-nombre="TISSOT" data-precio="1250">+ Añadir</button>
+      </div>
+    </article>
+
+    <article class="product-card" data-categoria="sport" data-precio="295">
+      <div class="product-card__img-wrap">
+        <span class="product-card__cat product-card__cat--sport">Sport</span>
+        <img class="product-card__img" src="resources/casioak.png" alt="G-SHOCK" />
+      </div>
+      <div class="product-card__body">
+        <span class="product-card__ref">KRN-005</span>
+        <h2 class="product-card__name">G-SHOCK</h2>
+        <p class="product-card__desc">Reloj resistente al agua, y a golpes.</p>
+      </div>
+      <div class="product-card__footer">
+        <span class="product-card__price">295 €</span>
+        <button class="add-to-cart" data-id="KRN-005" data-nombre="G-SHOCK" data-precio="295">+ Añadir</button>
+      </div>
+    </article>
+
+    <article class="product-card" data-categoria="clasico" data-precio="490">
+      <div class="product-card__img-wrap">
+        <span class="product-card__cat product-card__cat--clasico">Clásico</span>
+        <img class="product-card__img" src="resources/EFB-730D-2AV.png" alt="CASIO EDIFICE" />
+      </div>
+      <div class="product-card__body">
+        <span class="product-card__ref">KRN-006</span>
+        <h2 class="product-card__name">CASIO EDIFICE</h2>
+        <p class="product-card__desc">Dial de azul, brazalete metálico.</p>
+      </div>
+      <div class="product-card__footer">
+        <span class="product-card__price">490 €</span>
+        <button class="add-to-cart" data-id="KRN-006" data-nombre="CASIO EDIFICE" data-precio="490">+ Añadir</button>
+      </div>
+    </article>
+
+    <article class="product-card" data-categoria="digital" data-precio="210">
+      <div class="product-card__img-wrap">
+        <span class="product-card__cat product-card__cat--digital">Digital</span>
+        <img class="product-card__img" src="resources/casio.png" alt="CASIO" />
+      </div>
+      <div class="product-card__body">
+        <span class="product-card__ref">KRN-007</span>
+        <h2 class="product-card__name">CASIO</h2>
+        <p class="product-card__desc">Clásico reloj digital de Casio.</p>
+      </div>
+      <div class="product-card__footer">
+        <span class="product-card__price">210 €</span>
+        <button class="add-to-cart" data-id="KRN-007" data-nombre="CASIO" data-precio="210">+ Añadir</button>
+      </div>
+    </article>
+
+    <article class="product-card" data-categoria="luxury" data-precio="3800">
+      <div class="product-card__img-wrap">
+        <span class="product-card__cat product-card__cat--luxury">Luxury</span>
+        <img class="product-card__img" src="resources/rolex.png" alt="RULOX" />
+      </div>
+      <div class="product-card__body">
+        <span class="product-card__ref">KRN-008</span>
+        <h2 class="product-card__name">RULOX</h2>
+        <p class="product-card__desc">Cristal de zafiro, movimiento automático suizo.</p>
+      </div>
+      <div class="product-card__footer">
+        <span class="product-card__price">3.800 €</span>
+        <button class="add-to-cart" data-id="KRN-008" data-nombre="RULOX" data-precio="3800">+ Añadir</button>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- CARRITO LATERAL -->
+  <aside class="cart-drawer">
+    <div class="cart-drawer__header">
+      <h2>Tu carrito</h2>
+      <!-- Label que desmarca el checkbox — cierra el carrito -->
+      <label for="cartToggle" class="cart-close">✕</label>
+    </div>
+    <div class="cart-drawer__items" id="cartItems">
+      <p class="cart-empty">Tu carrito está vacío</p>
+    </div>
+    <div class="cart-drawer__footer">
+      <div class="cart-summary">
+        <div class="cart-summary__row"><span>Subtotal</span><span id="cartSubtotal">0,00 €</span></div>
+        <div class="cart-summary__row cart-summary__total"><span>Total</span><span id="cartTotal">0,00 €</span></div>
+      </div>
+      <button class="btn-primary btn-full">Finalizar compra</button>
+    </div>
+  </aside>
+
+  <!-- Overlay — label que también cierra el carrito al hacer click fuera -->
+  <label for="cartToggle" class="overlay"></label>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="header__logo">
+      <img class="logo-dark" src="resources/ruloxlogoblack.png" alt="RULOX" />
+      <img class="logo-light" src="resources/ruloxlogowhite.png" alt="RULOX" />
+    </div>
+    <p class="footer__copy">© 2025 RULOX. Todos los derechos reservados.</p>
+    <div class="footer__links">
+      <a href="#">Política de privacidad</a>
+      <a href="#">Aviso legal</a>
+      <a href="#">Devoluciones</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
